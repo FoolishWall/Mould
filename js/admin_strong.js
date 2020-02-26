@@ -11,7 +11,6 @@ $(document).ready(function(){
     //测试
     var ss_name=window.localStorage.getItem("admin_name");
     $("#user span").text(ss_name);
-
     //账号管理菜单栏
 	$("#account_m").click(function(){
 		if($(this).siblings(".add_li").css("display")=="none"){
@@ -35,8 +34,6 @@ $(document).ready(function(){
 		}
 	});
 	
-	
-
 	
 	//成绩管理菜单栏
 	$("#exam").click(function(){
@@ -397,6 +394,12 @@ $(document).ready(function(){
 		$("#database").siblings("div").css("display","none");
 		$("#database").css("display","block");
 	});
+	//数据增强
+	$("#traffic-signs-3").click(function(){
+		$("#database_add").siblings("div").css("display","none");
+		$("#database_add").css("display","block");
+	});
+	
 	
 	
     //Ajax请求

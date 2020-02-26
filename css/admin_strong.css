@@ -27,6 +27,8 @@ html,body{height: 100%;}
 .database_content_right{width: 38%;float:right;margin-right: 32px;margin-bottom: 12px;}
 .database_content_bottom{margin-left:32px;margin-right:32px;float: left;width: 94.8%;}
 
+.database_add_left{width: 18%;float:left;margin-left: 32px;margin-right: 24px;margin-bottom: 12px;}
+.database_add_right{width: 72%;float:right;margin-right: 32px;margin-bottom: 12px;}
 /*字体颜色*/
 /*修改密码*/
 .t{
@@ -91,7 +93,11 @@ margin-top: 24px;
 #set{display: none;}
 #set_score{display: none;}
 
+
 #database{display: none;}
+#database_add{display: none;}
+
+
 /*表格*/
 .table{font-size: medium;}
 th{text-align: center;}
