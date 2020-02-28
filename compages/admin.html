@@ -1076,11 +1076,172 @@
 					</div>
 	  		   </div>		
 	  </div>
+		
+		
+		<!-- 颜色检测 -->
+		<div class="traffic_right" id="color_check">
+					
+					<div class="search_score" style="margin: 32px;">
+					<!--选择颜色-->
+					<span class="glyphicon glyphicon-search" style="color: indianred;font-size: 18px;">选择颜色</span>
+						<!-- &nbsp;&nbsp; -->
+						<select class="selectpicker" data-width="64px" <!-- id="score_limit" -->>
+								<option></option>
+								<option>黄色</option>
+								<option>红色</option>
+								<option>蓝色</option>
+						</select>
+						&nbsp;&nbsp;
+							<input type="button" value="效果预览" class="btn btn-info" style="margin-top: -3px;"/>
+						<!-- <input type="text" placeholder="请输入分数"   style="width: 100px;" id="score_range"/> -->
+						
+					&nbsp;&nbsp;&nbsp;
+					<!--按钮-->
+						<input type="button" value="导出图片" class="btn btn-primary" data-loading-text="正在导出..." id="out_picture" style="margin-top: -3px;"/>	
+					</div>
+					
+					<div class="color_check_left">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+							<h3 class="panel-title">选择图片</h3>
+							</div>
+							<!--具体信息-->
+							<div class="panel-body">
+									<!-- <input id="f_upload" type="file" class="file" /> -->
+									<div class="container-fluid">
+									    <form id="form" action="" method="post" enctype="multipart/form-data">  
+									      <div >  
+									         <div class="panel panel-primary">  
+									         <div class="panel-body" style="padding-top: 0px;padding-top: 0px;padding-right: 0px;">  
+									           <div>  
+									              <input id="input-id-color" name="file" multiple type="file" data-show-caption="true">  
+									           </div>  
+									         </div>  
+									        </div>  
+									      </div>  
+									    </form>  
+									</div>
+							</div>
+							</div>
+				   </div>
+						   
+					<div class="color_check_right">
+									<div class="panel panel-primary">
+										<div class="panel-heading">
+										<h3 class="panel-title">效果预览</h3>
+										</div>
+										<!--具体信息-->
+										<div class="panel-body">
+											
+										</div>
+							
+								   </div>
+								   
+					</div>		
+		</div>
 
 
 
-
-
+		
+		<!-- 连通域计算 -->
+		<div class="traffic_right" id="area_computer">
+					
+					<!-- <div class="search_score" style="margin: 32px;">
+						&nbsp;&nbsp;
+							<input type="button" value="运行" class="btn btn-primary" style="margin-top: -3px;"/> -->
+						<!-- <input type="text" placeholder="请输入分数"   style="width: 100px;" id="score_range"/> -->	
+					<!-- </div> -->
+					
+					<div class="color_check_left" style="margin-top: 2rem;">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+							<h3 class="panel-title">选择图片</h3>
+							</div>
+							<!--具体信息-->
+							<div class="panel-body">
+								<div>
+									<div style="font-size: 18px;color: indianred;">
+										<span class="glyphicon glyphicon-info-sign">请选择二值图</span>
+									</div>
+									
+								</div>
+								<HR  width="100%" />
+									<!-- <input id="f_upload" type="file" class="file" /> -->
+									<div class="container-fluid">
+									    <form id="form" action="" method="post" enctype="multipart/form-data">  
+									      <div >  
+									         <div class="panel panel-primary">  
+									         <div class="panel-body" style="padding-top: 0px;padding-top: 0px;padding-right: 0px;">  
+									           <div>  
+									              <input id="input-id-area" name="file" multiple type="file" data-show-caption="true">  
+									           </div>  
+									         </div>  
+									        </div>  
+									      </div>  
+									    </form>  
+									</div>
+							</div>
+							</div>
+				   </div>
+						   
+					<div class="color_check_right" style="margin-top: 2rem;">
+									<div class="panel panel-primary">
+										<div class="panel-heading">
+										<h3 class="panel-title">运行结果</h3>
+										</div>
+										<!--具体信息-->
+										<div class="panel-body">
+											<div>
+												<div>
+													<input type="button" value="运行" class="btn btn-primary" style="margin-top: -3px;"/>
+												</div>
+												
+											</div>
+											<HR  width="100%" />
+											
+											<div class="input-group input-group-lg">
+											<span class="input-group-addon o">图片的名称</span>
+											<input type="password" class="form-control" placeholder="">
+											</div>
+											
+											<div class="input-group input-group-lg">
+											<span class="input-group-addon o">连通域数目</span>
+											<input type="password" class="form-control" placeholder="">
+											<span class="input-group-addon t">个</span>
+											</div>
+											<!-- <br /> -->
+																				
+											<div class="input-group input-group-lg">
+											<span class="input-group-addon o">最大连通域</span>
+											<input type="password" class="form-control" placeholder="">
+											<span class="input-group-addon t">像素</span>
+											</div>
+											<br />
+											
+											<div class="input-group input-group-lg">
+											<span class="input-group-addon o">图片的名称</span>
+											<input type="password" class="form-control" placeholder="">
+											</div>
+											
+											<div class="input-group input-group-lg">
+											<span class="input-group-addon o">连通域数目</span>
+											<input type="password" class="form-control" placeholder="">
+											<span class="input-group-addon t">个</span>
+											</div>
+											<!-- <br /> -->
+																				
+											<div class="input-group input-group-lg">
+											<span class="input-group-addon o">最大连通域</span>
+											<input type="password" class="form-control" placeholder="">
+											<span class="input-group-addon t">像素</span>
+											</div>
+										</div>
+							
+								   </div>
+								   
+					</div>		
+		</div>
+		
 
 
 		
@@ -1998,7 +2159,9 @@
    	</div>
 	<script type="text/javascript">
 	       $(function () {  
-	           initFileInput("input-id");  
+	           initFileInput("input-id");
+			   initFileInput("input-id-color");
+			   initFileInput("input-id-area");
 	           var win_id = '<%=win_id%>';
 	           $("#colseid").click(function() {
 	               if(win_id){

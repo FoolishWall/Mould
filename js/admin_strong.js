@@ -399,7 +399,30 @@ $(document).ready(function(){
 		$("#database_add").siblings("div").css("display","none");
 		$("#database_add").css("display","block");
 	});
-	
+	//颜色检测
+	$("#traffic-signs-4").click(function(){
+		swal("待确定!");
+	});
+	$("#traffic-signs-5").click(function(){
+		$("#color_check").siblings("div").css("display","none");
+		$("#color_check").css("display","block");
+	});
+	//连通域计算
+	$("#traffic-signs-6").click(function(){
+		swal("待确定!");
+	});
+	$("#traffic-signs-7").click(function(){
+		$("#area_computer").siblings("div").css("display","none");
+		$("#area_computer").css("display","block");
+	});
+	//用户信息
+	$("#traffic-signs-8").click(function(){
+		swal("待确定!");
+	});
+	$("#traffic-signs-9").click(function(){
+		$("#admin_cpassword").siblings("div").css("display","none");
+		$("#admin_cpassword").css("display","block");
+	});
 	
 	
     //Ajax请求

@@ -29,6 +29,9 @@ html,body{height: 100%;}
 
 .database_add_left{width: 18%;float:left;margin-left: 32px;margin-right: 24px;margin-bottom: 12px;}
 .database_add_right{width: 72%;float:right;margin-right: 32px;margin-bottom: 12px;}
+
+.color_check_left{width: 52%;float:left;margin-left: 32px;margin-right: 24px;margin-bottom: 12px;}
+.color_check_right{width: 38%;float:right;margin-right: 32px;margin-bottom: 12px;}
 /*字体颜色*/
 /*修改密码*/
 .t{
@@ -45,9 +48,7 @@ margin-top: 24px;padding: 18px;
 
 /*成绩查询*/
 .set_in{width: 95%;margin: 24px;}
-.search_score{background: #eee;border-radius:10px;box-shadow:0px 2px 8px #999;padding:15px;
-
-}
+.search_score{background: #eee;border-radius:10px;box-shadow:0px 2px 8px #999;padding:15px;}
 .search_score_detail{background: #eee;border-radius:10px;box-shadow:0px 2px 8px #999;
 margin-top: 24px;
 }
@@ -96,7 +97,8 @@ margin-top: 24px;
 
 #database{display: none;}
 #database_add{display: none;}
-
+#color_check{display: none;}
+#area_computer{display: none;}
 
 /*表格*/
 .table{font-size: medium;}
