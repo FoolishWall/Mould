@@ -10,7 +10,21 @@ a{}
 #top_button{margin: 32px;}
 .content{}
 /*top*/
-    	
+.myrow {
+				display: flex;
+				flex-direction: row;
+				/*margin-left:1em;*/
+			}
+			
+			.xxxx {
+				height: 2px;
+				background: #999999;
+				margin-top: 16px;
+				width: 2em;
+				margin-left: 1em;
+				margin-right: 1em;
+			}
+		
 .left_nav{background:#286090;width:13%;height:100%;float: left;position:fixed;margin-top: 64px;display: block;}
 
 
@@ -67,7 +81,8 @@ margin-top: 24px;
 
 
 /*right*/
-#admin_home{display: block;}
+#admin_home{display: none;}
+#traffic_home{display: block;}
 
 /*样例*/
 #right{display: none;}
@@ -99,7 +114,8 @@ margin-top: 24px;
 #database_add{display: none;}
 #color_check{display: none;}
 #area_computer{display: none;}
-
+#traffic_search_log{display: none;}
+#train{display: none;}
 /*表格*/
 .table{font-size: medium;}
 th{text-align: center;}

@@ -24,6 +24,11 @@
 	  <script type="text/javascript" src="../js/zh.js"></script>
 	  <script type="text/javascript" src="../js/fileinput_locale_zh.js"></script> 
 	  
+	  <!-- 时间控件 -->
+	  <link href="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+	  <script src="https://cdn.bootcss.com/moment.js/2.22.0/moment-with-locales.js"></script>
+	  <script src="https://cdn.bootcss.com/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+	  
 	  <!--导入css文件-->
 		 <link rel="stylesheet" href="../css/admin_strong.css" />		
 		
@@ -56,11 +61,12 @@
 				<!--导航栏-->
     		<div id="left" class="left_nav">
     				<!--首页-->
-					  <div id="home" class="list"><i class="glyphicon glyphicon-home" style="margin-right:5px ;"></i>首页</div>
-					  
-					  <!--Tsinghua-Tencent 100K -->
+					  <!-- <div id="home" class="list"><i class="glyphicon glyphicon-home" style="margin-right:5px ;"></i>首页</div> -->
+					  <!--首页-->
+					  <div id="traffic-signs-home" class="list"><i class="glyphicon glyphicon-home" style="margin-right:5px ;"></i>首页</div>
+					
 					  <div id="account">
-					  <div class="list" id="account_m"><i class="glyphicon glyphicon-star" style="margin-right:5px ;"></i>TT100K教程
+					  <div class="list" id="account_m"><i class="glyphicon glyphicon-star" style="margin-right:5px ;"></i>检测与识别
 					  	<i class="glyphicon glyphicon-menu-right" style="margin-top: 4px;float: right;"></i></div>
 					  	<div class="add_li">
 					  		
@@ -76,7 +82,8 @@
 					  		<!-- <a href="#" class="list-group-item" id="5">编辑教工信息</a> -->
 					  		</div>  		
 					  		
-					  		<div class="list_next" id="change_password"><i class="glyphicon glyphicon-refresh" style="margin-right:5px ;"></i>模型训练</div>
+					  		<!-- <div class="list_next" id="change_password"><i class="glyphicon glyphicon-refresh" style="margin-right:5px ;"></i>模型训练</div> -->
+							<div class="list_next" id="traffic-signs-11"><i class="glyphicon glyphicon-refresh" style="margin-right:5px ;"></i>模型训练</div>
 					  	</div>
 					  </div>
 					  
@@ -130,7 +137,8 @@
 					  <div class="list" id="reset"><i class="glyphicon glyphicon-record" style="margin-right:5px ;"></i>系统日志
 					  <i class="glyphicon glyphicon-menu-right" style="float:right;margin-top: 4px;"></i></div>
 					  <div class="add_li" style="text-align: center;">
-					  	<a href="#" class="list-group-item" id="17">成绩更新</a>
+					  	<!-- <a href="#" class="list-group-item" id="17">成绩更新</a> -->
+						<a href="#" class="list-group-item" id="traffic-signs-10">日志查询</a>
 					  </div>
 						</div>
 						
@@ -943,48 +951,205 @@
 		
 		<!-- 新增交通标志检测与识别部分 -->
 		
+		<!--交通标志首页-->
+		<div class="traffic_right" id="traffic_home">
+					
+					<!-- <div class="search_score" style="margin: 32px;">
+						&nbsp;&nbsp;
+							<input type="button" value="运行" class="btn btn-primary" style="margin-top: -3px;"/> -->
+						<!-- <input type="text" placeholder="请输入分数"   style="width: 100px;" id="score_range"/> -->	
+					<!-- </div> -->
+					
+					<div class="color_check_left" style="margin-top: 2rem;">
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+							<h3 class="panel-title">选择图片</h3>
+							</div>
+							<!--具体信息-->
+							<div class="panel-body">
+								<div>
+									<div style="font-size: 18px;color: indianred;">
+										<span class="glyphicon glyphicon-info-sign">请选择需要检测的图像</span>
+									</div>
+									
+								</div>
+								<HR  width="100%" />
+									<!-- <input id="f_upload" type="file" class="file" /> -->
+									<div class="container-fluid">
+									    <form id="form" action="" method="post" enctype="multipart/form-data">  
+									      <div >  
+									         <div class="panel panel-primary">  
+									         <div class="panel-body" style="padding-top: 0px;padding-top: 0px;padding-right: 0px;">  
+									           <div>  
+									              <input id="input-id-home" name="file" multiple type="file" data-show-caption="true">  
+									           </div>  
+									         </div>  
+									        </div>  
+									      </div>  
+									    </form>  
+									</div>
+									<div>
+										<input type="button" value="运行" class="btn btn-primary" style="margin-top: -3px;margin-left: 0.625rem;"/>
+									</div>
+							</div>
+							</div>
+				   </div>
+						   
+					<div class="color_check_right" style="margin-top: 2rem;">
+									<div class="panel panel-primary">
+										<div class="panel-heading">
+										<h3 class="panel-title">运行结果</h3>
+										</div>
+										<!--具体信息-->
+										<div class="panel-body">
+												
+											<span class="glyphicon glyphicon-star" style="color: indianred;font-size: 18px;">检测识别结果</span>
+											<HR  width="100%" />
+											<!-- <div style="width:100%;height: 6.25rem;">
+												
+											</div> -->
+											
+											
+											<span class="glyphicon glyphicon-check" style="color: indianred;font-size: 18px;">颜色检测结果</span>
+											<HR  width="100%" />
+											<!-- <div style="width:100%;height: 6.25rem;">
+												
+											</div> -->
+											
+											
+											<span class="glyphicon glyphicon-picture" style="color: indianred;font-size: 18px;">连通域计算结果</span>
+											<HR  width="100%" />
+
+											<!-- <div style="width:100%;height: 6.25rem;">
+												
+											</div> -->
+											
+											<span class="glyphicon glyphicon-send" style="color: indianred;font-size: 18px;">最终结果</span>
+											<HR  width="100%" />
+											
+											<div style="width:100%;height: 0.75rem;">
+												
+											</div>
+											
+										</div>
+							
+								   </div>
+								   
+					</div>		
+		</div>
+		
+		
 		<!-- 数据集介绍部分 -->
 		<div class="traffic_right" id="database">
 			
 			<div class="search_score" style="margin: 32px;">
-			<span class="glyphicon glyphicon-book" style="color: indianred;font-size: 18px;">  TT100K数据集是由清华大学与腾讯实验室联合发布的基于真实场景的交通标志公开数据集,其中共有9176张包含交通标志的图像,6105张用于训练,3071张用于测试。</span>	
+			<span class="glyphicon glyphicon-list-alt" style="color: indianred;font-size: 18px;">交通标志类别:</span>&nbsp;&nbsp;
+				<select class="selectpicker" data-width="156px">
+					<option></option>
+					<option>警告标志</option>
+					<option>禁令标志</option>
+					<option>指示标志</option>
+					<option>w1</option>
+					<option>w2</option>
+					<option>w3</option>
+					<option>w4</option>
+					<option>w5</option>
+					<option>w6</option>
+					<option>w7</option>
+					<option>w8</option>
+					<option>w9</option>
+					<option>p1</option>
+					<option>p2</option>
+					<option>p3</option>
+					<option>p4</option>
+					<option>p5</option>
+					<option>p6</option>
+					<option>w1</option>
+					<option>w2</option>
+					<option>w3</option>
+					<option>i1</option>
+					<option>i2</option>
+					<option>i3</option>
+					<option>pm*</option>
+					<option>pw*</option>
+					<option>il*</option>
+				</select>
+				&nbsp;&nbsp;&nbsp;
+
+							<span class="glyphicon glyphicon-stats" style="color: indianred;font-size: 18px;">实例数范围</span>
+							&nbsp;&nbsp;
+							<select class="selectpicker" data-width="64px">
+								<option></option>
+								<option><</option>
+								<option>></option>
+								<option>=</option>
+							</select>
+							&nbsp;&nbsp;
+							<input type="text" placeholder="请输入实例数大小"   style="width: 156px;" />
+							
+						&nbsp;&nbsp;&nbsp;
+						
+						<span class="glyphicon glyphicon-stats" style="color: indianred;font-size: 18px;">交通标志大小:</span>
+						&nbsp;&nbsp;
+						<input type="text" placeholder="请输入交通标志大小"   style="height: 32px;width: 156px;"/>
+						
+					&nbsp;&nbsp;&nbsp;
+					<!--按钮-->
+					<input type="button" value="查询" class="btn btn-primary" style="margin-top: -3px;" />
 			</div>
 			
 			
-			<div class="database_content_left">
+<!-- 			<div class="database_content_left">
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 					<h3 class="panel-title">主要包含的交通标志类别</h3>
 					</div>
-					<!--具体信息-->
 					<div class="panel-body">
 					<img src="../images/交通标志类别.png" height="128px" width="100%" >
-					</div>
-		
+					</div>		
 			   </div>
-		   </div>
+		   </div> -->
 			   
 			
-			<div class="database_content_right">
+			<!-- <div class="database_content_right">
 				<div class="panel panel-primary">
 					<div class="panel-heading">
 						<h3 class="panel-title">交通标志类别-实例数柱状图</h3>
 					</div>
-					<!--具体信息-->
 					<div class="panel-body">
 					<img src="../images/交通标志类别-实例数柱状图.png" height="128px" width="100%" >			
 					</div>
 					
 				</div>
-			</div>
+			</div> -->
 				   
 			<div class="database_content_bottom" >
 				<div class="panel panel-primary">
 					<div class="panel-heading">
-						<h3 class="panel-title">本系统的数据增强策略</h3>
+						<h3 class="panel-title">查询结果</h3>
 					</div>
 					<div class="panel-body">
-						<img src="../images/数据增强.png" height="148px" width="100%" >		
+						<div class="table">
+							<table class="table table-hover table-responsive" >
+										<thead>
+											<tr class="info">
+												<th>序号</th>
+												<th>类别</th>
+												<th>实例数</th>
+												<th>大小</th>
+												<th>所在图片服务器的位置</th>
+											</tr>
+										</thead>
+								<tbody id="search_teacher_content">
+								
+									
+										<tr class="active">
+											<td colspan="5">暂没有相关数据</td>
+										</tr>
+									
+								</tbody>
+								</table>
+						</div>		
 					</div>
 					
 				</div>
@@ -992,6 +1157,67 @@
 					
       </div>
 	  
+	  
+	  <!--模型训练-->
+	  <div id="train" class="right_content">
+	  	<div class="admin_content container">
+	  			<div class="row">
+	  				<div class="col-lg-12 admin_title">
+	  					<span class="glyphicon glyphicon-tag">模型训练系统</span>
+	  				</div>
+	  				<HR width="100%"></HR>
+	  			</div>	  			
+				
+				<div class="row">
+	  			<div class="col-lg-7 col-lg-offset-2">						
+	  				
+	  				<div class="panel panel-primary">
+	  					<div class="panel-heading">
+	  					<h3 class="panel-title">模型训练</h3>
+	  					</div>
+	  					<!--具体信息-->
+	  					<div class="panel-body">
+	  						<span class="glyphicon glyphicon-info-sign" style="color: indianred;font-size: 18px;">请选择数据集</span>&nbsp;&nbsp;
+	  						<input type="file" class="file" />
+	  								<!--网络模型-->
+	  									<!-- <span class="glyphicon glyphicon-exclamation-sign" style="color: indianred;font-size: 18px;">请选择网络模型</span>
+	  									<input type="file" class="file" /> -->
+	  									<br>
+	  								<!--按钮-->
+	  								<button type="button" class="btn btn-default">
+	  								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 导出模型
+	  								</button>
+	  								<button type="button" class="btn btn-primary">
+	  								  <!-- <span class="glyphicon glyphicon-star" aria-hidden="true"></span> --> 导出网络结构
+	  								</button>
+	  								<!-- <input type="button" value="导出网络结构" class="btn btn-primary" data-loading-text="正在导出..." /> -->
+	  					</div>
+	  					</div>
+						
+						<div class="panel panel-primary">
+							<div class="panel-heading">
+							<h3 class="panel-title">模型再训练</h3>
+							</div>
+							<!--具体信息-->
+							<div class="panel-body">
+								<span class="glyphicon glyphicon-info-sign" style="color: indianred;font-size: 18px;">请选择网络模型</span>&nbsp;&nbsp;
+								<input type="file" class="file" />
+										<!--网络模型-->
+											<span class="glyphicon glyphicon-exclamation-sign" style="color: indianred;font-size: 18px;">难例数</span>
+											<input type="text" readonly="readonly" style="height: 28px;width: 100px;"  placeholder="74"/>
+											<br><br>
+										<!--按钮-->
+										<button type="button" class="btn btn-default"  disabled="disabled">
+										  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 导出模型
+										</button>
+							</div>
+							</div>
+									
+	  				</div>
+	  			</div>
+	  	
+	  		</div>
+	  </div>
 	  
 	  <!-- 数据增强 -->
 	  <div class="traffic_right" id="database_add">
@@ -1218,29 +1444,104 @@
 											</div>
 											<br />
 											
-											<div class="input-group input-group-lg">
+											<!-- <div class="input-group input-group-lg">
 											<span class="input-group-addon o">图片的名称</span>
 											<input type="password" class="form-control" placeholder="">
-											</div>
+											</div> -->
 											
-											<div class="input-group input-group-lg">
+											<!-- <div class="input-group input-group-lg">
 											<span class="input-group-addon o">连通域数目</span>
 											<input type="password" class="form-control" placeholder="">
 											<span class="input-group-addon t">个</span>
-											</div>
+											</div> -->
 											<!-- <br /> -->
 																				
-											<div class="input-group input-group-lg">
+											<!-- <div class="input-group input-group-lg">
 											<span class="input-group-addon o">最大连通域</span>
 											<input type="password" class="form-control" placeholder="">
 											<span class="input-group-addon t">像素</span>
-											</div>
+											</div> -->
 										</div>
 							
 								   </div>
 								   
 					</div>		
 		</div>
+		
+		
+		<!-- 日志系统 -->
+		<div id="traffic_search_log" class="right_content">
+		  	<div class="set_in">
+		  	<div class="search_score">
+			
+			<!--<span class="glyphicon glyphicon-search" style="color: indianred;font-size: 18px;">职工号</span>&nbsp;&nbsp;-->
+						<!--<input type="text" placeholder="请输入职工号"   style="height: 32px;width: 148px;" id="search_teacher_id"/>-->
+						<!--&nbsp;&nbsp;&nbsp;-->
+						
+						
+						<!-- 时间控件 -->
+						<div class="form-group ">
+						<div class="myrow">
+						<span class="glyphicon glyphicon-time" style="color: indianred;font-size: 18px;">开始时间</span>
+								<div class='input-group date' style="width: 14em;" id='datetimepicker1'>
+									<input type='text' class="timeInput form-control" />
+									<span class="input-group-addon">
+						            <span class="glyphicon glyphicon-calendar"></span>
+									</span>
+								</div>
+								<div class="xxxx"></div>
+						<span class="glyphicon glyphicon-time" style="color: indianred;font-size: 18px;">结束时间</span>		
+								<div class='input-group date' style="width: 14em;" id='datetimepicker2'>
+									<input type='text' class="timeInput form-control" />
+									<span class="input-group-addon">
+						            <span class="glyphicon glyphicon-calendar"></span>
+									</span>
+								</div>
+								&nbsp;&nbsp;
+								<span class="glyphicon glyphicon-stats" style="color: indianred;font-size: 18px;">用户名</span>
+									&nbsp;&nbsp;
+									<input type="text" placeholder="请输入用户名"   style="height: 32px;width: 100px;" id="search_teacher_name"/>
+									
+								&nbsp;&nbsp;&nbsp;
+								<!--按钮-->
+								<input type="button" value="查询" class="btn btn-primary" style="margin-top: -3px;" id="search_teacher_btn"/>&nbsp;&nbsp;&nbsp;
+								<input type="button" value="显示所有日志信息" class="btn btn-primary" style="margin-top: -3px;" id="search_allteacher_btn"/>
+						</div>
+						</div>
+			</div>
+			
+			<!--新增教工-->
+			<div class="search_score" style="margin-top: 24px;">
+					<button class="btn btn-primary">导出日志</button>
+			</div>
+			<!--新增教工-->
+			
+			
+			
+		<div class="search_score_detail">
+			<div class="table">
+				<table class="table table-hover table-responsive" >
+							<thead>
+								<tr class="info">
+									<th>序号</th>
+									<th>用户名</th>
+									<th>操作内容</th>
+									<th>操作时间</th>
+								</tr>
+							</thead>
+					<tbody id="search_teacher_content">
+		
+						
+							<tr class="active">
+								<td colspan="4">暂没有相关数据</td>
+							</tr>
+						
+					</tbody>
+					</table>
+			</div>
+		</div>
+		</div>
+		  </div>			
 		
 
 
@@ -2158,8 +2459,10 @@
 		<!--模态框之设置数据增强策略-->			
    	</div>
 	<script type="text/javascript">
-	       $(function () {  
+	       $(function () {
+			   // 上传图片插件初始化
 	           initFileInput("input-id");
+			   initFileInput("input-id-home");
 			   initFileInput("input-id-color");
 			   initFileInput("input-id-area");
 	           var win_id = '<%=win_id%>';
@@ -2168,6 +2471,28 @@
 	                   parent.Ext.getCmp(win_id).close();
 	               }
 	           });
+			   
+			   // 时间插件初始化
+			   $('#form1').hide();
+			   	var picker1 = $('#datetimepicker1').datetimepicker({
+			   		format: 'YYYY-MM-DD',
+			   		locale: moment.locale('zh-cn'),
+			   		//minDate: '2016-7-1'
+			   	});
+			   	var picker2 = $('#datetimepicker2').datetimepicker({
+			   		format: 'YYYY-MM-DD',
+			   		locale: moment.locale('zh-cn')
+			   	});
+			   	//动态设置最小值
+			   	picker1.on('dp.change', function(e) {
+			   		picker2.data('DateTimePicker').minDate(e.date);
+			   	});
+			   	//动态设置最大值
+			   	picker2.on('dp.change', function(e) {
+			   		picker1.data('DateTimePicker').maxDate(e.date);
+			   	});
+			  
+			   
 	       })  
 	                
 	       function initFileInput(ctrlName) {  
@@ -2214,7 +2539,18 @@
 	           }).on('fileerror', function(event, data, msg) {  //一个文件上传失败  
 	               console.log('文件上传失败！'+data.id);  
 	           })  
-	           }  
+	           }
+				 
+			$('#datetimepicker1').datetimepicker({
+				format: 'YYYY-MM-DD',
+				locale: moment.locale('zh-cn'),
+				defaultDate: "2019-12-24"
+			});
+			$('#datetimepicker2').datetimepicker({
+				format: 'YYYY-MM-DD',
+				locale: moment.locale('zh-cn'),
+				defaultDate: "2028-1-1"
+			});	 
 	</script>	
   </body>
 </html>

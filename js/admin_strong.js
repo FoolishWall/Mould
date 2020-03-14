@@ -385,6 +385,11 @@ $(document).ready(function(){
     });
 	
 	//新增交通标志检测与识别部分
+	//首页
+	$("#traffic-signs-home").click(function(){
+		$("#traffic_home").siblings("div").css("display","none");
+		$("#traffic_home").css("display","block");
+	});
 	//算法介绍
 	$("#traffic-signs-1").click(function(){
 		swal("待确定!");
@@ -424,6 +429,17 @@ $(document).ready(function(){
 		$("#admin_cpassword").css("display","block");
 	});
 	
+	//系统日志
+	$("#traffic-signs-10").click(function(){
+		$("#traffic_search_log").siblings("div").css("display","none");
+		$("#traffic_search_log").css("display","block");
+	});
+	
+	//模型训练
+	$("#traffic-signs-11").click(function(){
+		$("#train").siblings("div").css("display","none");
+		$("#train").css("display","block");
+	});
 	
     //Ajax请求
     //退出
